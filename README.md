@@ -45,7 +45,7 @@ weather-app/
 ├── package.json
 └── README.md
 
- ## How to Run
+## How to Run
 
 1. Clone the repository
 2. Install dependencies
@@ -56,7 +56,7 @@ weather-app/
     - http://localhost:3000
     
 
-API Setup:
+## API Setup:
 
 Go to: https://openweathermap.org
 
@@ -64,6 +64,6 @@ Create an account and get your API key
 
 Add it to your backend (server.js)
 
-Author:
+## Author:
 Lavanya Jalla
 Aspiring Full Stack Developer | Java | JavaScript | Web Apps
