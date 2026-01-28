@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="app">
+
+    <header class="top">
+      <header class="logo-header">
+  <img src="Logo.png" alt="SkyWave Logo" class="logo-img">
+</header>
+      <h1>SkyWave</h1>
+      <div class="search">
+        <input id="cityInput" placeholder="Enter city (e.g. Hyderabad)" />
+        <button onclick="searchCity()">Search</button>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- CURRENT WEATHER -->
+      <section class="current">
+        <h2 id="city">City</h2>
+        <div class="temp-box">
+          <img id="icon" />
+          <div>
+            <h1 id="temp">--°C</h1>
+            <p id="desc">Condition</p>
+          </div>
+        </div>
+      </section>
+
+    <!-- INFO GRID -->
+<section class="info-grid">
+  <div>🌡️ Feels Like<br><b id="feels">--</b>°C</div>
+  <div>💧 Humidity<br><b id="humidity">--</b>%</div>
+  <div>💨 Wind<br><b id="wind">--</b> km/h</div>
+  <div>📊 Pressure<br><b id="pressure">--</b> hPa</div>
+  <div>👁️ Visibility<br><b id="visibility">--</b> km</div>
+  <div>🌡️ Min / Max<br><b id="minmax">--</b></div>
+</section>
+
+      <!-- SUN TIME -->
+      <section class="sun">
+        🌅 Sunrise: <span id="sunrise">--:--</span> |
+        🌇 Sunset: <span id="sunset">--:--</span>
+      </section>
+
+      <!-- PREMIUM CHARTS -->
+      <section class="chart-card">
+        <h3 class="chart-title">Temperature (Next Hours)</h3>
+        <div class="chart-container"><canvas id="tempChart"></canvas></div>
+      </section>
+
+      <section class="chart-card">
+        <h3 class="chart-title">Humidity (%)</h3>
+        <div class="chart-container"><canvas id="humidityChart"></canvas></div>
+      </section>
+
+      <section class="chart-card">
+        <h3 class="chart-title">Wind Speed (km/h)</h3>
+        <div class="chart-container"><canvas id="windChart"></canvas></div>
+      </section>
+
+      <section class="chart-card">
+        <h3 class="chart-title">Rain Probability (%)</h3>
+        <div class="chart-container"><canvas id="rainChart"></canvas></div>
+      </section>
+
+      <!-- FORECAST -->
+      <h3 class="forecast-title">5-Day Forecast</h3>
+      <section class="forecast" id="forecast"></section>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

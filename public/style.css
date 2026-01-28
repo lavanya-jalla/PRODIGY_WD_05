@@ -1,0 +1,299 @@
+* {
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  margin: 0;
+ background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 1200px;
+  margin: auto;
+  padding: 25px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search {
+  display: flex;
+  gap: 12px;
+}
+
+input {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+  width: 240px;
+  outline: none;
+}
+
+button {
+  background: #00c6ff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #009acd;
+}
+
+.content {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+}
+/* BRAND SECTION (logo + text) */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #fff;
+  padding: 0px;
+}
+
+.brand-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.current {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.temp-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.info-grid div {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 18px;
+  border-radius: 15px;
+  text-align: center;
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+.sun {
+  grid-column: span 2;
+  text-align: center;
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+/* PREMIUM GLASS CHART CARD */
+.chart-card {
+  grid-column: span 2;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 25px;
+  border-radius: 22px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 40px rgba(0, 200, 255, 0.15);
+  border: 1px solid rgba(0, 200, 255, 0.3);
+  animation: fadeIn 1s ease;
+}
+
+.chart-title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+}
+
+.chart-container {
+  height: 350px;
+  position: relative;
+}
+
+/* Forecast */
+.forecast-title {
+  grid-column: span 2;
+  margin-top: 20px;
+}
+
+.forecast {
+  grid-column: span 2;
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+}
+
+.forecast-card {
+  min-width: 150px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 18px;
+  text-align: center;
+  animation: fadeInUp 0.7s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media(max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+
+body.sunny {
+  background: linear-gradient(to bottom, #b89c13, #984445);
+  animation: sunnyGlow 5s infinite alternate;
+}
+
+@keyframes sunnyGlow {
+  from {
+    filter: brightness(1);
+  }
+
+  to {
+    filter: brightness(1.15);
+  }
+}
+
+body.cloudy {
+  background: linear-gradient(to bottom, #757f9a, #d7dde8);
+}
+
+body.rainy {
+  background: #0f2027;
+}
+
+body.rainy::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("https://i.imgur.com/7J7JwYh.png");
+  animation: rain 0.4s infinite linear;
+  opacity: 0.4;
+}
+
+@keyframes rain {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: -20px 100px;
+  }
+}
+
+body.thunder {
+  background: #232526;
+}
+
+body.thunder::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  animation: lightning 4s infinite;
+}
+
+@keyframes lightning {
+
+  0%,
+  95% {
+    opacity: 0;
+  }
+
+  96% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+body.snowy {
+  background: #83a4d4;
+}
+
+body.snowy::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("https://i.imgur.com/p5hYF1u.png");
+  animation: snow 3s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes snow {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 400px;
+  }
+}
+body.day-mode {
+  color: #ffffff;
+}
+
+body.night-mode {
+  background: linear-gradient(180deg, #000428, #004e92);
+  color: #cfe0f5;
+}
